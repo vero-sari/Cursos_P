@@ -13,9 +13,8 @@ import javax.persistence.Table;
 @Table(name = "planificacion")
 public class Planificacion {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(length = 10, nullable = false, unique = true)
-    private Long id;
+    @Column(length = 50, nullable = false, unique = true)
+    private String id;
     private String nombre_curso;
     private String docente;
     private Date fecha_inicio;
@@ -25,10 +24,10 @@ public class Planificacion {
     private String documento;
 
     
-    public Planificacion(Long id) {
+    public Planificacion(String id) {
         this.id = id;
     }
-    public Planificacion(Long id, String nombre_curso, String docente, Date fecha_inicio, Date fecha_fin,
+    public Planificacion(String id, String nombre_curso, String docente, Date fecha_inicio, Date fecha_fin,
             String horario, String estado, String documento) {
         this.id = id;
         this.nombre_curso = nombre_curso;
@@ -41,10 +40,10 @@ public class Planificacion {
     }
     public Planificacion() {
     }
-    public Long getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Long  id) {
+    public void setId(String  id) {
         this.id = id;
     }
     public String getNombre_curso() {
